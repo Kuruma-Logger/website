@@ -25,5 +25,7 @@ export const navItems: NavItem[] = [
 
 export function withBase(path: string): string {
   const normalized = path.startsWith("/") ? path.slice(1) : path;
-  return `${import.meta.env.BASE_URL}${normalized}`;
+  const base = import.meta.env.BASE_URL || "/";
+  const baseWithTrailingSlash = base.endsWith("/") ? base : `${base}/`;
+  return `${baseWithTrailingSlash}${normalized}`;
 }
