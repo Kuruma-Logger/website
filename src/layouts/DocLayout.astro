@@ -1,13 +1,24 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 
-interface Props {
+interface DocFrontmatter {
   title: string;
   currentPath: string;
   intro?: string;
 }
 
-const { title, currentPath, intro } = Astro.props as Props;
+interface Props {
+  frontmatter?: Partial<DocFrontmatter>;
+  title?: string;
+  currentPath?: string;
+  intro?: string;
+}
+
+const props = Astro.props as Props;
+const frontmatter = props.frontmatter ?? {};
+const title = frontmatter.title ?? props.title ?? "";
+const currentPath = frontmatter.currentPath ?? props.currentPath ?? "/";
+const intro = frontmatter.intro ?? props.intro;
 ---
 
 <BaseLayout currentPath={currentPath} title={title}>
