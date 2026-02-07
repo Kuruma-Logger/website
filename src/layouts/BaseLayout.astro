@@ -6,9 +6,10 @@ interface Props {
   title?: string;
   description?: string;
   currentPath?: string;
+  fullWidth?: boolean;
 }
 
-const { title, description, currentPath = "/" } = Astro.props as Props;
+const { title, description, currentPath = "/", fullWidth = false } = Astro.props as Props;
 const pageTitle = title ? `${title} | ${siteConfig.name}` : siteConfig.name;
 const pageDescription = description ?? siteConfig.description;
 
@@ -47,7 +48,7 @@ function isActivePath(path: string): boolean {
         </nav>
       </div>
     </header>
-    <main class="container main-content">
+    <main class={fullWidth ? "main-content main-content-wide" : "container main-content"}>
       <slot />
     </main>
     <footer class="site-footer">

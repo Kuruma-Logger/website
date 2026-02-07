@@ -52,7 +52,7 @@ while ((match = headingRegex.exec(contentHtml)) !== null) {
 const hasToc = tocItems.length > 0;
 ---
 
-<BaseLayout currentPath={currentPath} title={title}>
+<BaseLayout currentPath={currentPath} title={title} fullWidth={true}>
   <div class={hasToc ? "md-docs-layout has-toc" : "md-docs-layout"}>
     {
       hasToc ? (

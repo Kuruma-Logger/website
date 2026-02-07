@@ -123,6 +123,11 @@ p {
   flex: 1;
 }
 
+.main-content-wide {
+  width: 100%;
+  max-width: none;
+}
+
 .hero {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -335,15 +340,22 @@ textarea:focus-visible {
 .md-docs-layout.has-toc {
   display: grid;
   grid-template-columns: 280px minmax(0, 1fr);
-  gap: 1rem;
+  gap: 0;
   align-items: stretch;
+  width: 100%;
 }
 
 .md-docs-toc {
+  grid-column: 1;
+  position: sticky;
+  top: 80px;
+  align-self: start;
+  max-height: calc(100dvh - 80px);
+  overflow: auto;
   background: transparent;
   border-right: 1px solid var(--line);
   border-radius: 0;
-  padding: 0.2rem 1rem 0.2rem 0;
+  padding: 0.65rem 1rem 0.65rem 0.25rem;
 }
 
 .md-docs-toc-title {
@@ -389,13 +401,17 @@ textarea:focus-visible {
 }
 
 .md-docs-main {
+  grid-column: 2;
   min-width: 0;
+  padding: 0 1.15rem;
 }
 
 .md-docs-content {
   background: transparent;
   border: 0;
   padding: 0.2rem 0.2rem 0.4rem;
+  max-width: 860px;
+  margin: 0 auto;
 }
 
 .doc-content {
@@ -465,6 +481,8 @@ textarea:focus-visible {
   .md-docs-toc {
     position: static;
     top: auto;
+    max-height: none;
+    overflow: visible;
     padding: 0 0 0.7rem;
     border-right: 0;
     border-bottom: 1px solid var(--line);
@@ -481,11 +499,31 @@ textarea:focus-visible {
     white-space: nowrap;
     padding-left: 0.55rem;
   }
+
+  .md-docs-main {
+    grid-column: 1;
+    padding: 0;
+  }
+
+  .main-content-wide {
+    width: min(var(--container-width), calc(100% - 2rem));
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 900px) {
   .card-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1280px) {
+  .md-docs-layout.has-toc {
+    grid-template-columns: 280px minmax(0, 1fr) 280px;
+  }
+
+  .md-docs-main {
+    grid-column: 2;
   }
 }
 
