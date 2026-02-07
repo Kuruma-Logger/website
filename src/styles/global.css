@@ -386,12 +386,10 @@ textarea:focus-visible {
   min-width: 0;
 }
 
-.md-docs-hero {
-  margin-bottom: 0.9rem;
-}
-
 .md-docs-content {
-  padding: 1.3rem 1.5rem;
+  background: transparent;
+  border: 0;
+  padding: 0.2rem 0.2rem 0.4rem;
 }
 
 .doc-content {
@@ -494,8 +492,11 @@ textarea:focus-visible {
   }
 
   .hero,
-  .section,
-  .md-docs-content {
+  .section {
     padding: 1rem;
+  }
+
+  .md-docs-content {
+    padding: 0;
   }
 }

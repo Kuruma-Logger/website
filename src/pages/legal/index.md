@@ -2,8 +2,11 @@
 layout: ../../layouts/DocLayout.astro
 title: 法務情報
 currentPath: /legal/
-intro: ライセンス、免責事項、問い合わせデータの取り扱いを記載します。
 ---
+
+# 法務情報
+
+ライセンス、免責事項、問い合わせデータの取り扱いを記載します。
 
 ## ライセンス
 

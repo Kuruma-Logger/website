@@ -4,21 +4,18 @@ import BaseLayout from "./BaseLayout.astro";
 interface DocFrontmatter {
   title: string;
   currentPath: string;
-  intro?: string;
 }
 
 interface Props {
   frontmatter?: Partial<DocFrontmatter>;
   title?: string;
   currentPath?: string;
-  intro?: string;
 }
 
 const props = Astro.props as Props;
 const frontmatter = props.frontmatter ?? {};
 const title = frontmatter.title ?? props.title ?? "";
 const currentPath = frontmatter.currentPath ?? props.currentPath ?? "/";
-const intro = frontmatter.intro ?? props.intro;
 
 const contentHtml = await Astro.slots.render("default");
 
@@ -75,11 +72,7 @@ const hasToc = tocItems.length > 0;
     }
 
     <section class="md-docs-main">
-      <section class="hero md-docs-hero">
-        <h1>{title}</h1>
-        {intro ? <p>{intro}</p> : null}
-      </section>
-      <article class="section doc-content md-docs-content">
+      <article class="doc-content md-docs-content">
         <Fragment set:html={contentHtml} />
       </article>
     </section>

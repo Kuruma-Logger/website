@@ -2,8 +2,11 @@
 layout: ../../layouts/DocLayout.astro
 title: トラブル対応（FAQ統合）
 currentPath: /troubleshooting/
-intro: 症状別の確認手順と、よくある質問を1ページに統合しています。
 ---
+
+# トラブル対応（FAQ統合）
+
+症状別の確認手順と、よくある質問を1ページに統合しています。
 
 ## 症状別の確認手順
 

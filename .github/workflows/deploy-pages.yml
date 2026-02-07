@@ -20,7 +20,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PUBLIC_FORMSPREE_ENDPOINT: ${{ vars.PUBLIC_FORMSPREE_ENDPOINT }}
-      PUBLIC_LICENSE_SERVER_URL: ${{ vars.PUBLIC_LICENSE_SERVER_URL }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4

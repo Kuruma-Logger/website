@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { siteConfig, withBase } from "../config/site";
+import { withBase } from "../config/site";
 ---
 
 <BaseLayout currentPath="/" title="ホーム">
@@ -42,13 +42,4 @@ import { siteConfig, withBase } from "../config/site";
     </div>
   </section>
 
-  <section class="section">
-    <h2>外部リンク</h2>
-    <div class="link-row">
-      <a class="button-link" href={siteConfig.githubReleasesUrl} target="_blank" rel="noreferrer">
-        GitHub Releases
-      </a>
-      <a class="button-link" href={withBase("/legal/")}>法務情報</a>
-    </div>
-  </section>
 </BaseLayout>

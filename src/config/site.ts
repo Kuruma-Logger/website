@@ -8,8 +8,6 @@ export const siteConfig = {
   description:
     "Kuruma-Logger のセットアップ、トラブル対応、問い合わせをまとめたサポートサイト。",
   language: "ja",
-  githubReleasesUrl: "https://github.com/Kuruma-Logger/oss/releases",
-  licenseServerUrl: (import.meta.env.PUBLIC_LICENSE_SERVER_URL || "").trim(),
   formspreeEndpoint: (import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || "").trim()
 };
 

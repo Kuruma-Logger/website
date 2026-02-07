@@ -2,8 +2,11 @@
 layout: ../../layouts/DocLayout.astro
 title: セットアップガイド
 currentPath: /setup/
-intro: 初回導入時に必要な機材と基本手順をまとめています。
 ---
+
+# セットアップガイド
+
+初回導入時に必要な機材と基本手順をまとめています。
 
 ## 必要なもの
 
