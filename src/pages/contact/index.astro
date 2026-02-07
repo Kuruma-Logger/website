@@ -1,0 +1,93 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { siteConfig, withBase } from "../../config/site";
+
+const isFormspreeEnabled = Boolean(siteConfig.formspreeEndpoint);
+const thanksPath = withBase("/contact/thanks/");
+const nextUrl = Astro.site ? new URL(thanksPath, Astro.site).toString() : thanksPath;
+---
+
+<BaseLayout currentPath="/contact/" title="問い合わせ">
+  <section class="hero">
+    <h1>問い合わせ</h1>
+    <p>
+      ログイン不要で問い合わせできます。確認に必要な情報をできるだけ具体的に記載してください。
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>問い合わせフォーム</h2>
+    {
+      isFormspreeEnabled ? (
+        <form method="POST" action={siteConfig.formspreeEndpoint}>
+          <input type="hidden" name="_subject" value="Kuruma-Logger サポート問い合わせ" />
+          <input type="hidden" name="_next" value={nextUrl} />
+          <input type="text" name="_gotcha" class="hidden-field" tabIndex="-1" autoComplete="off" />
+          <label>
+            お名前
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            メールアドレス
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            カテゴリ
+            <select name="category" required>
+              <option value="">選択してください</option>
+              <option value="setup">セットアップ</option>
+              <option value="connection">接続/連携</option>
+              <option value="logging">ログ保存</option>
+              <option value="other">その他</option>
+            </select>
+          </label>
+          <label>
+            車種
+            <select name="vehicle" required>
+              <option value="">選択してください</option>
+              <option value="nd">Mazda Roadster ND</option>
+              <option value="fl5">Honda Civic FL5</option>
+              <option value="unknown">不明</option>
+            </select>
+          </label>
+          <label>
+            ファームウェアバージョン
+            <input type="text" name="firmware_version" placeholder="例: v1.2.3" />
+          </label>
+          <label>
+            発生手順・症状
+            <textarea
+              name="message"
+              required
+              placeholder="いつ、どの操作で、何が起きたかを記載してください。"
+            ></textarea>
+          </label>
+          <label class="consent-row">
+            <input type="checkbox" name="consent" value="agreed" required />
+            <span>送信内容がサポート対応に利用されることに同意します。</span>
+          </label>
+          <button class="button-link primary" type="submit">送信する</button>
+        </form>
+      ) : (
+        <div class="status-box warn">
+          <p>
+            Formspree の送信先が未設定です。`PUBLIC_FORMSPREE_ENDPOINT` を設定してください。
+          </p>
+          <p>設定後に再ビルドするとフォーム送信が有効になります。</p>
+        </div>
+      )
+    }
+  </section>
+
+  <section class="section">
+    <h2>送信前チェック</h2>
+    <ul class="bullet-list">
+      <li>車種・バージョン情報を記載したか</li>
+      <li>再現手順を時系列で書いたか</li>
+      <li>ログや画面情報の有無を記載したか</li>
+    </ul>
+    <p>
+      送信内容の取り扱いについては <a href={withBase("/legal/")}>法務情報</a> を参照してください。
+    </p>
+  </section>
+</BaseLayout>

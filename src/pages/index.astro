@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { siteConfig, withBase } from "../config/site";
+---
+
+<BaseLayout currentPath="/" title="ホーム">
+  <section class="hero">
+    <h1>Kuruma-Logger サポートサイト</h1>
+    <p>
+      Kuruma-Logger のセットアップ、よくある質問、トラブル対応、アップデート情報をまとめています。
+      このサイトは日本語のみで運用します。
+    </p>
+    <div class="link-row">
+      <a class="button-link primary" href={withBase("/setup/")}>セットアップを確認</a>
+      <a class="button-link" href={withBase("/contact/")}>問い合わせる</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>よく使うページ</h2>
+    <div class="card-grid">
+      <article class="card">
+        <h3>セットアップ</h3>
+        <p>必要機材と初回起動までの流れを確認できます。</p>
+        <a href={withBase("/setup/")}>セットアップガイドへ</a>
+      </article>
+      <article class="card">
+        <h3>FAQ</h3>
+        <p>利用中に多い質問をカテゴリごとに掲載しています。</p>
+        <a href={withBase("/faq/")}>FAQを見る</a>
+      </article>
+      <article class="card">
+        <h3>トラブル対応</h3>
+        <p>症状別に確認項目と対処手順を整理しています。</p>
+        <a href={withBase("/troubleshooting/")}>対処手順を見る</a>
+      </article>
+      <article class="card">
+        <h3>更新情報</h3>
+        <p>更新内容とライセンスサーバーへの導線を確認できます。</p>
+        <a href={withBase("/updates/")}>更新情報を見る</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>外部リンク</h2>
+    <div class="link-row">
+      <a class="button-link" href={siteConfig.githubReleasesUrl} target="_blank" rel="noreferrer">
+        GitHub Releases
+      </a>
+      <a class="button-link" href={withBase("/legal/")}>法務情報</a>
+    </div>
+  </section>
+</BaseLayout>

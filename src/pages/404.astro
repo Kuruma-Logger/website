@@ -1,0 +1,12 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { withBase } from "../config/site";
+---
+
+<BaseLayout title="ページが見つかりません">
+  <section class="hero">
+    <h1>ページが見つかりません</h1>
+    <p>指定された URL のページは存在しないか、移動した可能性があります。</p>
+    <a class="button-link primary" href={withBase("/")}>ホームへ戻る</a>
+  </section>
+</BaseLayout>

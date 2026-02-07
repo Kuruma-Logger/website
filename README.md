@@ -1,0 +1,49 @@
+# Kuruma-Logger Support Website
+
+Kuruma-Logger のサポートサイトです。GitHub Pages へ静的配信します。
+
+## 技術スタック
+
+- Astro (static output)
+- GitHub Actions + GitHub Pages
+- Formspree（ログイン不要の問い合わせフォーム）
+
+## ローカル開発
+
+```bash
+npm install
+npm run dev
+```
+
+## 環境変数
+
+`.env.example` をコピーして必要な値を設定してください。
+
+- `PUBLIC_FORMSPREE_ENDPOINT`
+  - 例: `https://formspree.io/f/xxxxxxxx`
+  - 未設定時は問い合わせフォームが送信不可になります。
+- `PUBLIC_LICENSE_SERVER_URL`
+  - 更新情報ページに表示するライセンスサーバー URL。
+- `PUBLIC_SITE_URL`
+  - 任意。OGP などで使うサイト URL。
+- `PUBLIC_BASE_PATH`
+  - 任意。プロジェクトページ配信時のベースパス（例: `/website`）。
+
+## GitHub 側設定
+
+Repository Variables に以下を設定してください。
+
+- `PUBLIC_FORMSPREE_ENDPOINT`
+- `PUBLIC_LICENSE_SERVER_URL`
+
+設定後、`main` へマージすると `.github/workflows/deploy-pages.yml` が実行され、GitHub Pages に公開されます。
+
+## ページ構成
+
+- `/` ホーム
+- `/setup/` セットアップガイド
+- `/faq/` FAQ
+- `/troubleshooting/` トラブル対応
+- `/updates/` 更新情報
+- `/contact/` 問い合わせフォーム
+- `/legal/` 法務情報

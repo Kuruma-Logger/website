@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { withBase } from "../../config/site";
+---
+
+<BaseLayout currentPath="/contact/" title="送信完了">
+  <section class="hero">
+    <h1>送信を受け付けました</h1>
+    <p>問い合わせ内容を確認の上、必要に応じてご連絡します。</p>
+    <div class="link-row">
+      <a class="button-link primary" href={withBase("/")}>ホームに戻る</a>
+      <a class="button-link" href={withBase("/faq/")}>FAQ を確認</a>
+    </div>
+  </section>
+</BaseLayout>
