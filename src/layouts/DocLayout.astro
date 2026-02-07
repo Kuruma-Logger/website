@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import { withBase } from "../config/site";
 
 interface DocFrontmatter {
   title: string;
@@ -19,14 +20,45 @@ const frontmatter = props.frontmatter ?? {};
 const title = frontmatter.title ?? props.title ?? "";
 const currentPath = frontmatter.currentPath ?? props.currentPath ?? "/";
 const intro = frontmatter.intro ?? props.intro;
+
+const docNavItems = [
+  { label: "セットアップ", href: "/setup/" },
+  { label: "トラブル対応（FAQ統合）", href: "/troubleshooting/" },
+  { label: "法務情報", href: "/legal/" }
+];
+
+function isActivePath(path: string): boolean {
+  if (path === "/") return currentPath === "/";
+  return currentPath.startsWith(path);
+}
 ---
 
 <BaseLayout currentPath={currentPath} title={title}>
-  <section class="hero">
-    <h1>{title}</h1>
-    {intro ? <p>{intro}</p> : null}
-  </section>
-  <article class="section doc-content">
-    <slot />
-  </article>
+  <div class="md-docs-layout">
+    <aside class="md-docs-sidebar">
+      <p class="md-docs-sidebar-title">Markdown Docs</p>
+      <nav aria-label="Markdown ナビゲーション" class="md-docs-sidebar-nav">
+        {
+          docNavItems.map((item) => (
+            <a
+              href={withBase(item.href)}
+              class={isActivePath(item.href) ? "md-docs-sidebar-link active" : "md-docs-sidebar-link"}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+    </aside>
+
+    <section class="md-docs-main">
+      <section class="hero md-docs-hero">
+        <h1>{title}</h1>
+        {intro ? <p>{intro}</p> : null}
+      </section>
+      <article class="section doc-content md-docs-content">
+        <slot />
+      </article>
+    </section>
+  </div>
 </BaseLayout>

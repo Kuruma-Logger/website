@@ -31,44 +31,27 @@ function isActivePath(path: string): boolean {
   </head>
   <body>
     <header class="site-header">
-      <div class="header-inner">
-        <a class="logo" href={withBase("/")}>
-          <span class="logo-main">Kuruma-Logger</span>
-          <span class="logo-sub">Support Docs</span>
-        </a>
-        <nav aria-label="ヘッダーリンク" class="header-links">
-          <a href={siteConfig.githubReleasesUrl} target="_blank" rel="noreferrer">Releases</a>
-          <a href={withBase("/contact/")}>問い合わせ</a>
-        </nav>
-      </div>
-    </header>
-
-    <div class="docs-shell">
-      <aside class="docs-sidebar">
-        <p class="sidebar-title">ドキュメント</p>
-        <nav aria-label="グローバルナビゲーション" class="sidebar-nav">
+      <div class="container header-inner">
+        <a class="logo" href={withBase("/")}>{siteConfig.name}</a>
+        <nav aria-label="グローバルナビゲーション" class="nav-list">
           {
             navItems.map((item) => (
               <a
                 href={withBase(item.href)}
-                class={isActivePath(item.href) ? "sidebar-link active" : "sidebar-link"}
+                class={isActivePath(item.href) ? "nav-link active" : "nav-link"}
               >
                 {item.label}
               </a>
             ))
           }
         </nav>
-      </aside>
-
-      <main class="docs-main">
-        <div class="docs-content">
-          <slot />
-        </div>
-      </main>
-    </div>
-
+      </div>
+    </header>
+    <main class="container main-content">
+      <slot />
+    </main>
     <footer class="site-footer">
-      <div class="footer-inner">
+      <div class="container footer-inner">
         <p>© {new Date().getFullYear()} Kuruma-Logger</p>
         <div class="footer-links">
           <a href={siteConfig.githubReleasesUrl} target="_blank" rel="noreferrer">GitHub Releases</a>
