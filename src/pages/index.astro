@@ -7,7 +7,7 @@ import { siteConfig, withBase } from "../config/site";
   <section class="hero">
     <h1>Kuruma-Logger サポートサイト</h1>
     <p>
-      Kuruma-Logger のセットアップ、よくある質問、トラブル対応、アップデート情報をまとめています。
+      Kuruma-Logger のセットアップ、トラブル対応（FAQ統合）、アップデート情報をまとめています。
       このサイトは日本語のみで運用します。
     </p>
     <div class="link-row">
@@ -25,19 +25,19 @@ import { siteConfig, withBase } from "../config/site";
         <a href={withBase("/setup/")}>セットアップガイドへ</a>
       </article>
       <article class="card">
-        <h3>FAQ</h3>
-        <p>利用中に多い質問をカテゴリごとに掲載しています。</p>
-        <a href={withBase("/faq/")}>FAQを見る</a>
-      </article>
-      <article class="card">
-        <h3>トラブル対応</h3>
-        <p>症状別に確認項目と対処手順を整理しています。</p>
-        <a href={withBase("/troubleshooting/")}>対処手順を見る</a>
+        <h3>トラブル対応（FAQ統合）</h3>
+        <p>症状別の確認手順と、よくある質問を1ページにまとめています。</p>
+        <a href={withBase("/troubleshooting/")}>統合ページを見る</a>
       </article>
       <article class="card">
         <h3>更新情報</h3>
         <p>更新内容とライセンスサーバーへの導線を確認できます。</p>
         <a href={withBase("/updates/")}>更新情報を見る</a>
+      </article>
+      <article class="card">
+        <h3>法務情報</h3>
+        <p>ライセンス、免責、問い合わせデータの取り扱いを確認できます。</p>
+        <a href={withBase("/legal/")}>法務情報を見る</a>
       </article>
     </div>
   </section>

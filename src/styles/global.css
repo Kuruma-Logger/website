@@ -145,6 +145,26 @@ p {
   margin-bottom: 0.9rem;
 }
 
+.doc-content h2,
+.doc-content h3 {
+  margin-top: 1.3rem;
+}
+
+.doc-content h2:first-child,
+.doc-content h3:first-child {
+  margin-top: 0;
+}
+
+.doc-content ul,
+.doc-content ol {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+}
+
+.doc-content li {
+  margin-bottom: 0.45rem;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

@@ -42,8 +42,15 @@ Repository Variables に以下を設定してください。
 
 - `/` ホーム
 - `/setup/` セットアップガイド
-- `/faq/` FAQ
-- `/troubleshooting/` トラブル対応
+- `/troubleshooting/` トラブル対応（FAQ統合）
 - `/updates/` 更新情報
 - `/contact/` 問い合わせフォーム
 - `/legal/` 法務情報
+
+## Markdown で更新するページ
+
+以下のページは Markdown ファイルを直接編集できます。
+
+- `/setup/` -> `src/pages/setup/index.md`
+- `/troubleshooting/` -> `src/pages/troubleshooting/index.md`
+- `/legal/` -> `src/pages/legal/index.md`
