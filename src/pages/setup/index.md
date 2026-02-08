@@ -152,11 +152,11 @@ GPSの測位には時間がかかります。
     Wi-Fiを切りたい場合は、青色”AP”ボタンを押してください。
     灰色になれば、Wi-FiがOFFです。
 
+<video controls src="ap-mode.mp4" title="Title"></video>
+
 スマホのWi-Fi設定画面で、Kuruma-Loggerのアクセスポイントに接続します。
 
     接続するとスマホはインターネットに繋がらなくなることにご注意ください。
-
-<video controls src="ap-mode.mp4" title="Title"></video>
 
 RaceChronoのアプリを起動します。
 
