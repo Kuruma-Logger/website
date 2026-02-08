@@ -131,7 +131,7 @@ GPSの測位には時間がかかります。
 
 これでSDログが終了です。
 
-<video controls src="SDログ.mp4" title="Title"></video>
+<video controls src="sd-log.mp4" title="Title"></video>
 
 ### RaceChronoへの転送機能
 あらかじめスマホとRaceChrono側の設定が必要です。設定方法は下記リンクからnoteをご参照ください。
@@ -156,7 +156,7 @@ GPSの測位には時間がかかります。
 
     接続するとスマホはインターネットに繋がらなくなることにご注意ください。
 
-<video controls src="APモード.mp4" title="Title"></video>
+<video controls src="ap-mode.mp4" title="Title"></video>
 
 RaceChronoのアプリを起動します。
 
