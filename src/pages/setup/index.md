@@ -70,12 +70,11 @@ PCとUSBType-Cケーブルをご用意ください。
     ライセンスを M5Stack CoreS3 SE に送信してください。
 
     上記noteにあるように、M5Stack CoreS3 SE でライセンスが認証されていることを確かめてください。
+    ![alt text](42A50527-3CBD-431B-B5ED-EDADB33B44BE_1_105_c.jpeg)
 
 ソフトウェアをアップデートする際も同じように実行してください。ライセンスは期間内であれば新規発行は不要です。最初に発行したものをご利用ください。
 
 [7]:https://note.com/kurumariond/n/n119b0978c485
-
-## ソフトウェアの設定
 
 ## 中間ハーネスの取り付け
 
@@ -90,6 +89,7 @@ PCとUSBType-Cケーブルをご用意ください。
     最悪の場合、車両が壊る可能性があります。
 
 コネクタをミニCANユニットに接続してください。
+![alt text](D89AF629-4EDF-4A11-8666-1805CF0AFC9E_1_201_a.jpeg)
 
 [8]:https://note.com/kurumariond/n/nbe64c41a821f
 
@@ -112,6 +112,7 @@ GPSの測位には時間がかかります。
     画面上部のGPSという文字の横の数字は衛生数です。 調子のいい時は17まで上がります。
 
 画面上部の⚪︎のアイコン5つが全て青色になれば正常です。
+![alt text](C14B1DC2-DA32-4077-B0D3-C4A896AF2A1D_4_5005_c.jpeg)
 
 ## 画面操作方法
 
@@ -129,6 +130,8 @@ GPSの測位には時間がかかります。
 しばらくすると青色”SD”ボタンに戻ります。
 
 これでSDログが終了です。
+
+<video controls src="SDログ.mp4" title="Title"></video>
 
 ### RaceChronoへの転送機能
 あらかじめスマホとRaceChrono側の設定が必要です。設定方法は下記リンクからnoteをご参照ください。
@@ -152,6 +155,8 @@ GPSの測位には時間がかかります。
 スマホのWi-Fi設定画面で、Kuruma-Loggerのアクセスポイントに接続します。
 
     接続するとスマホはインターネットに繋がらなくなることにご注意ください。
+
+<video controls src="APモード.mp4" title="Title"></video>
 
 RaceChronoのアプリを起動します。
 
