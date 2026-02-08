@@ -478,6 +478,14 @@ textarea:focus-visible {
   padding: 0;
 }
 
+.doc-content img {
+  display: block;
+  width: min(100%, 640px);
+  height: auto;
+  margin: 1rem auto;
+  border-radius: 10px;
+}
+
 @media (max-width: 960px) {
   .md-docs-layout.has-toc {
     grid-template-columns: 1fr;
