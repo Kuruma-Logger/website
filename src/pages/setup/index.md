@@ -61,15 +61,15 @@ currentPath: /setup/
 ## ソフトウェアのインストール
 PCとUSBType-Cケーブルをご用意ください。
 
-        PC / USBType-C / M5Stack CoreS3 SE を繋げます。
+    PC / USBType-C / M5Stack CoreS3 SE を繋げます。
 
 [WEBインストーラの利用方法][7]を参考にして、任意のソフトをM5Stack CoreS3 SEにインストールします。
 
-        MACアドレスを入力し、ライセンスを発行してしください。
+    MACアドレスを入力し、ライセンスを発行してしください。
 
-        ライセンスを M5Stack CoreS3 SE に送信してください。
+    ライセンスを M5Stack CoreS3 SE に送信してください。
 
-        上記noteにあるように、M5Stack CoreS3 SE でライセンスが認証されていることを確かめてください。
+    上記noteにあるように、M5Stack CoreS3 SE でライセンスが認証されていることを確かめてください。
 
 ソフトウェアをアップデートする際も同じように実行してください。ライセンスは期間内であれば新規発行は不要です。最初に発行したものをご利用ください。
 
