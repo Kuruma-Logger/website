@@ -4,9 +4,9 @@ export type NavItem = {
 };
 
 export const siteConfig = {
-  name: "Kuruma-Logger サポート",
+  name: "Kuruma-Logger",
   description:
-    "Kuruma-Logger のセットアップ、トラブル対応、問い合わせをまとめたサポートサイト。",
+    "Kuruma-Logger の情報をまとめたポータルサイトです。",
   language: "ja",
   formspreeEndpoint: (import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || "").trim()
 };
@@ -14,8 +14,8 @@ export const siteConfig = {
 export const navItems: NavItem[] = [
   { label: "ホーム", href: "/" },
   { label: "セットアップ", href: "/setup/" },
-  { label: "トラブル対応（FAQ統合）", href: "/troubleshooting/" },
-  { label: "更新情報", href: "/updates/" },
+  { label: "ファームウェア", href: "/updates/" },
+  { label: "よくある質問", href: "/troubleshooting/" },
   { label: "問い合わせ", href: "/contact/" },
   { label: "法務情報", href: "/legal/" }
 ];
