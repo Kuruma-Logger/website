@@ -17,7 +17,7 @@ export const navItems: NavItem[] = [
   { label: "ファームウェア", href: "/updates/" },
   { label: "よくある質問", href: "/troubleshooting/" },
   { label: "問い合わせ", href: "/contact/" },
-  { label: "法務情報", href: "/legal/" }
+  { label: "特商法表記", href: "/legal/" }
 ];
 
 export function withBase(path: string): string {
