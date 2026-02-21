@@ -162,10 +162,6 @@ p {
   margin-bottom: 0.9rem;
 }
 
-.section-description {
-  color: var(--muted);
-}
-
 .card-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
