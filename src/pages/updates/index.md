@@ -15,9 +15,11 @@ currentPath: /updates/
 | Roadster ND | v0.1.2 | v0.1.2 | 配信中 |
 | Civic FL5 | v0.1.2 | v0.1.2 | 配信中 |
 
-## ライセンスサーバー
+## WEBインストーラ
 
-- [ライセンスサーバーへ移動](https://ik1-117-65350.vs.sakura.ne.jp)
+ブラウザからファームウェア書き込みを行う場合は、以下から開始してください。
+
+- [WEBインストーラを開く](https://ik1-117-65350.vs.sakura.ne.jp)
 
 ## 更新履歴
 
