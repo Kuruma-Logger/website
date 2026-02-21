@@ -37,12 +37,12 @@ RaceChrono の Analog1〜Analog15 に転送している項目です。
 |---|---|---|
 | Analog1 | 車速 | km/h |
 | Analog2 | アクセル開度 | % |
-| Analog3 | ブレーキ圧 | bar |
+| Analog3 | ブレーキ圧 | % |
 | Analog4 | ステア角度 | deg |
 | Analog5 | ステアトルク | N·m |
 | Analog6 | 吸気温度 | ℃ |
 | Analog7 | エンジン水温 | ℃ |
-| Analog8 | 燃料残量 | 比率 (0.0-1.0) |
+| Analog8 | 燃料残量 | L |
 | Analog9 | モード | 状態値 |
 | Analog10 | 左前輪ホイール速度 | km/h |
 | Analog11 | 右前輪ホイール速度 | km/h |
