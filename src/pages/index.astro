@@ -56,4 +56,31 @@ import { withBase } from "../config/site";
     </div>
   </section>
 
+  <section class="section">
+    <h2>構成図</h2>
+    <p class="section-description">
+      Kuruma-Logger のハードウェア構成とソフトウェア構成を、ホーム画面からすぐ確認できます。
+    </p>
+    <div class="diagram-grid">
+      <article class="diagram-card">
+        <h3>ハードウェア構成図</h3>
+        <img
+          class="diagram-image"
+          src={withBase("/setup/hardware-architecture-proposal.svg")}
+          alt="Kuruma-Logger ハードウェア構成図"
+          loading="lazy"
+        />
+      </article>
+      <article class="diagram-card">
+        <h3>ソフトウェア構成図</h3>
+        <img
+          class="diagram-image"
+          src={withBase("/setup/software-architecture-proposal.svg")}
+          alt="Kuruma-Logger ソフトウェア構成図"
+          loading="lazy"
+        />
+      </article>
+    </div>
+  </section>
+
 </BaseLayout>

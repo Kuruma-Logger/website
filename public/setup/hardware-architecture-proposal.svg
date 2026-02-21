@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1080" viewBox="0 0 1800 1080" role="img" aria-labelledby="t d">
+  <title id="t">Kuruma-Logger ハードウェア構成図</title>
+  <desc id="d">車載構成を左、外部接続機器を右に分離した図。車両から中間ハーネス、ミニCANユニットへ流れ、M5Stack本体とGNSS/ボトムへ接続する。</desc>
+
+  <defs>
+    <style>
+      .bg { fill: #f6f8fc; }
+      .zone { fill: #eef2ff; stroke: #c7d2fe; stroke-width: 2.2; }
+      .box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2.1; }
+      .core { fill: #e0ecff; stroke: #4f86ff; stroke-width: 2.8; }
+      .cover { fill: #f8fafc; stroke: #64748b; stroke-width: 2.2; stroke-dasharray: 9 7; }
+      .note { fill: #fff7ed; stroke: #fb923c; stroke-width: 2; }
+      .line { stroke: #2563eb; stroke-width: 2.9; fill: none; }
+      .wifi { stroke: #2563eb; stroke-width: 2.9; fill: none; stroke-dasharray: 8 7; }
+      .title { font: 700 40px 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; fill: #0f172a; }
+      .zt { font: 700 24px 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; fill: #0f172a; }
+      .h { font: 700 21px 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; fill: #0f172a; text-anchor: middle; }
+      .p { font: 500 17px 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; fill: #334155; text-anchor: middle; }
+      .lb { font: 600 16px 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; fill: #1d4ed8; }
+      .nt { font: 700 22px 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; fill: #0f172a; }
+      .np { font: 500 18px 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; fill: #334155; }
+      .icon { stroke: #1e293b; stroke-width: 2.4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .fill { fill: #1e293b; }
+    </style>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1800" height="1080"/>
+  <text class="title" x="60" y="72">Kuruma-Logger ハードウェア構成図</text>
+
+  <!-- Left: vehicle flow arranged as triangle -->
+  <rect class="box" x="70" y="240" width="280" height="180" rx="14"/>
+  <g class="icon" transform="translate(210 278)">
+    <rect x="-30" y="18" width="60" height="16" rx="4"/>
+    <path d="M-22 18 L-10 6 L12 6 L24 18"/>
+    <circle cx="-15" cy="38" r="5"/>
+    <circle cx="15" cy="38" r="5"/>
+  </g>
+  <text class="h" x="210" y="360">車両側</text>
+  <text class="p" x="210" y="388">CAN信号 / 12V電源</text>
+
+  <rect class="box" x="80" y="500" width="260" height="150" rx="12"/>
+  <g class="icon" transform="translate(210 530)">
+    <path d="M-24 18 H12"/>
+    <path d="M12 10 V26"/>
+    <path d="M18 10 V26"/>
+  </g>
+  <text class="h" x="210" y="590">中間ハーネス</text>
+  <text class="p" x="210" y="618">車両接続用</text>
+
+  <rect class="box" x="430" y="470" width="320" height="200" rx="14"/>
+  <g class="icon" transform="translate(590 510)">
+    <rect x="-36" y="8" width="52" height="32" rx="6"/>
+    <path d="M16 24 H46"/>
+    <path d="M46 18 V30"/>
+    <path d="M52 18 V30"/>
+    <path d="M58 18 V30"/>
+  </g>
+  <text class="h" x="590" y="598">ミニCANユニット</text>
+  <text class="p" x="590" y="626">CAN受信 + 電源取り出し</text>
+
+  <!-- Center-right stack: M5 > GNSS > Bottom -->
+  <rect class="core" x="980" y="160" width="360" height="220" rx="14"/>
+  <g class="icon" transform="translate(1160 205)">
+    <rect x="-40" y="0" width="80" height="52" rx="8"/>
+    <rect x="-30" y="9" width="60" height="26" rx="4"/>
+    <path d="M-18 52 V64"/>
+    <path d="M18 52 V64"/>
+    <path d="M-24 64 H24"/>
+  </g>
+  <text class="h" x="1160" y="300">M5Stack CoreS3</text>
+  <text class="p" x="1160" y="328">Kuruma-Logger 本体（データ処理・表示）</text>
+
+  <rect class="box" x="980" y="430" width="360" height="150" rx="12"/>
+  <g class="icon" transform="translate(1160 468)">
+    <circle cx="-9" cy="9" r="7"/>
+    <path d="M-2 9 H19"/>
+    <path d="M13 2 L21 9 L13 16"/>
+  </g>
+  <text class="h" x="1160" y="532">GNSSモジュール</text>
+  <text class="p" x="1160" y="560">位置・速度を取得</text>
+
+  <rect class="cover" x="980" y="620" width="360" height="180" rx="12"/>
+  <g class="icon" transform="translate(1160 652)">
+    <rect x="-24" y="0" width="48" height="14" rx="3"/>
+    <rect x="-20" y="18" width="40" height="12" rx="3"/>
+    <rect x="-16" y="34" width="32" height="10" rx="3"/>
+  </g>
+  <text class="h" x="1160" y="734">ボトムユニット</text>
+  <text class="p" x="1160" y="760">背面カバー（蓋）</text>
+  <text class="p" x="1160" y="786">※ 電源供給・信号入力なし</text>
+
+  <!-- Right external devices zone -->
+  <rect class="zone" x="1520" y="170" width="260" height="760" rx="16"/>
+  <text class="zt" x="1540" y="208">外部接続機器</text>
+
+  <rect class="box" x="1545" y="250" width="220" height="180" rx="12"/>
+  <g class="icon" transform="translate(1655 286)">
+    <rect x="-31" y="0" width="62" height="40" rx="6"/>
+    <path d="M-15 48 H15"/>
+    <path d="M-8 40 V48"/>
+    <path d="M8 40 V48"/>
+  </g>
+  <text class="h" x="1655" y="365">PC</text>
+  <text class="p" x="1655" y="394">Webインストーラ / 設定</text>
+
+  <rect class="box" x="1545" y="460" width="220" height="180" rx="12"/>
+  <g class="icon" transform="translate(1655 496)">
+    <rect x="-15" y="0" width="30" height="54" rx="8"/>
+    <circle cx="0" cy="46" r="2.2" class="fill"/>
+    <rect x="-8" y="7" width="16" height="30" rx="3"/>
+  </g>
+  <text class="h" x="1655" y="575">スマホ</text>
+  <text class="p" x="1655" y="604">RaceChrono 接続先</text>
+
+  <rect class="box" x="1545" y="670" width="220" height="180" rx="12"/>
+  <g class="icon" transform="translate(1655 706)">
+    <path d="M-22 0 H14 L23 9 V42 H-22 Z"/>
+    <path d="M14 0 V9 H23"/>
+    <path d="M-13 18 H14"/>
+    <path d="M-13 28 H14"/>
+  </g>
+  <text class="h" x="1655" y="785">microSD</text>
+  <text class="p" x="1655" y="814">走行ログ保存先</text>
+
+  <!-- flow and labels -->
+  <path class="line" d="M210 420 V500" marker-end="url(#a)"/>
+  <path class="line" d="M340 575 C372 575, 396 573, 430 570" marker-end="url(#a)"/>
+  <text class="lb" x="318" y="448">車両 → 中間ハーネス → ミニCAN</text>
+  <text class="lb" x="326" y="472">（CAN信号 + 12V電源）</text>
+
+  <path class="line" d="M750 570 C858 560, 902 420, 980 300" marker-end="url(#a)"/>
+  <text class="lb" x="804" y="454">Grove接続</text>
+
+  <path class="line" d="M1160 380 V430" marker-end="url(#a)"/>
+  <path class="line" d="M1160 580 V620" marker-end="url(#a)"/>
+  <text class="lb" x="1176" y="410">Stack接続</text>
+  <text class="lb" x="1176" y="610">Stack接続</text>
+
+  <!-- external connection ports on outer right side of M5 -->
+  <path class="line" d="M1340 250 H1360"/>
+  <path class="line" d="M1340 280 H1360"/>
+  <path class="line" d="M1340 310 H1360"/>
+
+  <path class="line" d="M1545 340 C1498 340, 1428 336, 1360 250" marker-end="url(#a)"/>
+  <text class="lb" x="1320" y="232">USB-C（書込み / 設定）</text>
+
+  <path class="wifi" d="M1545 550 C1498 548, 1432 420, 1360 280" marker-end="url(#a)"/>
+  <text class="lb" x="1446" y="505">Wi-Fi AP</text>
+
+  <path class="line" d="M1545 760 C1498 760, 1436 520, 1360 310" marker-end="url(#a)"/>
+  <text class="lb" x="1432" y="700">microSDカード挿入</text>
+
+  <rect class="note" x="50" y="960" width="1720" height="100" rx="10"/>
+  <text class="nt" x="72" y="994">補足</text>
+  <text class="np" x="72" y="1022">電源とCAN信号は車両→中間ハーネス→ミニCANユニットへ入力。ボトムユニットは蓋としてのみ機能します。</text>
+</svg>
