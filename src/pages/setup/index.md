@@ -25,7 +25,7 @@ currentPath: /setup/
     
     - 中間ハーネス
         - [ND5RC用][5]
-        - [FL5用][7]
+        - [FL5用][11]
     
 [1]:https://ssci.to/9690
 [2]:https://ssci.to/9276
@@ -33,7 +33,7 @@ currentPath: /setup/
 [4]:https://ssci.to/9567
 [5]:https://ssci.to/11030
 [6]:https://www.amazon.co.jp/KIOXIA-%E3%82%AD%E3%82%AA%E3%82%AF%E3%82%B7%E3%82%A2-microSDHC%E3%82%AB%E3%83%BC%E3%83%89-Amazon-co-jp%E3%83%A2%E3%83%87%E3%83%AB-KLMEA032G/dp/B08PTNWQ6P?ref_=ast_sto_dp&th=1
-[7]:https://minkara.carview.co.jp/userid/1653459/car/3573283/8546317/note.aspx
+[11]:https://minkara.carview.co.jp/userid/1653459/car/3573283/8546317/note.aspx
 
 
 ## ハードウェアの組み立て
