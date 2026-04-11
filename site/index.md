@@ -8,9 +8,6 @@ hero:
   name: Kuruma-Logger
   text: サポートサイト
   tagline: セットアップ、トラブル対応、更新情報を一か所にまとめています。
-  image:
-    src: /setup/software-architecture-proposal.svg
-    alt: Kuruma-Logger ソフトウェア構成図
   actions:
     - theme: brand
       text: セットアップを確認
