@@ -4,11 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
+    "dev": "vitepress dev site --host",
+    "build": "vitepress build site",
+    "preview": "vitepress preview site"
   },
-  "dependencies": {
-    "astro": "^5.0.0"
+  "devDependencies": {
+    "vitepress": "^1.6.4"
   }
 }

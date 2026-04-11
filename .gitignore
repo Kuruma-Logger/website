@@ -1,4 +1,5 @@
 node_modules/
 dist/
-.astro/
 .env
+site/.vitepress/cache/
+site/.vitepress/dist/
