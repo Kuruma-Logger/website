@@ -64,4 +64,17 @@ Repository Variables に以下を設定してください。
 - 設定: `site/.vitepress/config.ts`
 - テーマ拡張: `site/.vitepress/theme/`
 - 問い合わせフォーム: `site/.vitepress/theme/components/ContactForm.vue`
-- セットアップ用アセット: `site/setup/`
+- 構成図 (ホームから参照): `site/architecture/`
+- セットアップページの画像: `site/setup/images/` （運用ルールは [`site/setup/images/README.md`](./site/setup/images/README.md)）
+
+## 画像・メディアの取り扱いルール
+
+ページ内で参照する画像・動画・図版は、ページディレクトリ配下の `images/` サブフォルダに集約します（例: `site/setup/images/`）。撮り直し時のファイル名カオスを防ぐため、下記ルールに従ってください。
+
+1. **ファイル名は「役割」だけ**（kebab-case、拡張子は lowercase）。連番・日付・バージョン・underscore は名前に含めない。
+   - 良い: `gnss-dip-switch.png`、`wifi-setting.mp4` ／ 悪い: `step02_dip-switch.png`、`gnss-dip-switch-v2.png`、`analog_meter.JPG`
+2. **撮り直しは同名ファイルを上書き**。VitePress がビルド時に hash 付きファイル名を生成するのでキャッシュは自動で破棄されます。git 履歴も 1 ファイルにまとまります。
+3. **画像 (.jpg/.jpeg/.png/.svg) は md から reference-style で参照**。本文に `![alt][img-<role>]` を書き、URL は md 末尾にまとめて宣言します。差し替え時は URL 1 行のみの編集で済みます。
+4. **動画 (.mp4) は `<video>` タグで直接記述**。`![alt](video.mp4)` だと `<img>` に変換され再生されないため、`<video controls width="100%" src="./images/<file>.mp4" title="..."></video>` の形で書きます。
+
+セットアップページの実例とマニフェスト（label と用途の対応表）は [`site/setup/images/README.md`](./site/setup/images/README.md) を参照してください。
