@@ -45,10 +45,10 @@ Kuruma-Logger はソフトウェアとして提供されます。車両本体、
 <div class="home-diagram-grid">
   <article class="home-diagram-card">
     <h3>ハードウェア構成図</h3>
-    <img src="./setup/hardware-architecture-proposal.svg" alt="Kuruma-Logger ハードウェア構成図" />
+    <img src="./architecture/hardware.svg" alt="Kuruma-Logger ハードウェア構成図" />
   </article>
   <article class="home-diagram-card">
     <h3>ソフトウェア構成図</h3>
-    <img src="./setup/software-architecture-proposal.svg" alt="Kuruma-Logger ソフトウェア構成図" />
+    <img src="./architecture/software.svg" alt="Kuruma-Logger ソフトウェア構成図" />
   </article>
 </div>
