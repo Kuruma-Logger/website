@@ -2,53 +2,50 @@
 layout: home
 title: Kuruma-Logger サポートサイト
 titleTemplate: false
-description: Kuruma-Logger のセットアップ、トラブル対応、更新情報をまとめたサポートサイトです。
+description: Kuruma-Logger のセットアップ、使い方、トラブル対応、更新情報をまとめたサポートサイトです。
 aside: false
 hero:
   name: Kuruma-Logger
   text: サポートサイト
-  tagline: セットアップ、トラブル対応、更新情報を一か所にまとめています。
+  tagline: セットアップ、使い方、トラブル対応、更新情報を一か所にまとめています。
   actions:
     - theme: brand
-      text: セットアップを確認
+      text: セットアップを始める
       link: /setup/
     - theme: alt
-      text: 問い合わせる
-      link: /contact/
+      text: 使い方ガイド
+      link: /guide/
 features:
   - title: セットアップ
     details: 必要機材と初回起動までの流れを確認できます。
     link: /setup/
+  - title: 使い方ガイド
+    details: 画面の見方、RaceChrono 連携、microSD ログの使い方をまとめています。
+    link: /guide/
   - title: トラブル対応
-    details: 症状別の確認手順とFAQを1ページにまとめています。
+    details: 症状別の確認手順と問い合わせ前のチェックリストです。
     link: /troubleshooting/
   - title: 更新情報
-    details: 配信中のバージョンと変更内容を確認できます。
+    details: 配信中のファームウェアと変更内容を確認できます。
     link: /updates/
-  - title: 特商法表記
-    details: ライセンス販売に関する表示事項を確認できます。
-    link: /legal/
 ---
 
-## Kuruma-Logger の機能概要
+::: warning 重要なお知らせ（2026-05-17）
+v1.0.7 以前のファームウェアには OTA 更新を受け取れない不具合があります。該当する方は PC の WEB インストーラから v1.0.13 の再インストールをお願いします。手順は [更新情報](./updates/) を確認してください。
+:::
 
-- 対応車種の CAN データを収集し、SD カードへ走行ログとして保存します。
-- セットアップ手順、トラブル対応、更新情報をサポートサイトで一元管理します。
-- ライセンス管理により、機能提供とアップデート配布を継続的に運用します。
+## Kuruma-Logger とは
+
+対応車種（Roadster ND / Civic Type R FL5）の CAN データと GPS を 25Hz で記録し、メータ表示・RaceChrono 連携・microSD への走行ログ保存ができる車載データロガーです。
+
+<div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/AuV_nHszgyY" title="Kuruma-Loggerの紹介" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+</div>
+
+- 走行ログを microSD に保存し、CircuitTools などで分析できます。
+- RaceChrono へ 20Hz でリアルタイム転送できます。
+- スマホやディスプレイオーディオでダッシュボードを表示できます。
 
 ::: warning 注意
 Kuruma-Logger はソフトウェアとして提供されます。車両本体、配線、電源、センサー、記録媒体などのハードウェアに起因する不具合や損害については、運営者は責任を負いません。
 :::
-
-## 構成図
-
-<div class="home-diagram-grid">
-  <article class="home-diagram-card">
-    <h3>ハードウェア構成図</h3>
-    <img src="./architecture/hardware.svg" alt="Kuruma-Logger ハードウェア構成図" />
-  </article>
-  <article class="home-diagram-card">
-    <h3>ソフトウェア構成図</h3>
-    <img src="./architecture/software.svg" alt="Kuruma-Logger ソフトウェア構成図" />
-  </article>
-</div>

@@ -42,6 +42,7 @@ Repository Variables に以下を設定してください。
 
 - `/` ホーム
 - `/setup/` セットアップガイド
+- `/guide/` 使い方ガイド
 - `/troubleshooting/` トラブル対応（FAQ統合）
 - `/updates/` 更新情報
 - `/contact/` 問い合わせフォーム
@@ -53,6 +54,7 @@ Repository Variables に以下を設定してください。
 
 - `/` -> `site/index.md`
 - `/setup/` -> `site/setup/index.md`
+- `/guide/` -> `site/guide/index.md`
 - `/troubleshooting/` -> `site/troubleshooting/index.md`
 - `/updates/` -> `site/updates/index.md`
 - `/contact/` -> `site/contact/index.md`
@@ -64,8 +66,7 @@ Repository Variables に以下を設定してください。
 - 設定: `site/.vitepress/config.ts`
 - テーマ拡張: `site/.vitepress/theme/`
 - 問い合わせフォーム: `site/.vitepress/theme/components/ContactForm.vue`
-- 構成図 (ホームから参照): `site/architecture/`
-- セットアップページの画像: `site/setup/images/` （運用ルールは [`site/setup/images/README.md`](./site/setup/images/README.md)）
+- ページ画像: `site/setup/images/` と `site/guide/images/`（運用ルールは各ディレクトリの README.md）
 
 ## 画像・メディアの取り扱いルール
 
@@ -77,4 +78,4 @@ Repository Variables に以下を設定してください。
 3. **画像 (.jpg/.jpeg/.png/.svg) は md から reference-style で参照**。本文に `![alt][img-<role>]` を書き、URL は md 末尾にまとめて宣言します。差し替え時は URL 1 行のみの編集で済みます。
 4. **動画 (.mp4) は `<video>` タグで直接記述**。`![alt](video.mp4)` だと `<img>` に変換され再生されないため、`<video controls width="100%" src="./images/<file>.mp4" title="..."></video>` の形で書きます。
 
-セットアップページの実例とマニフェスト（label と用途の対応表）は [`site/setup/images/README.md`](./site/setup/images/README.md) を参照してください。
+セットアップページの実例とマニフェスト（label と用途の対応表）は [`site/setup/images/README.md`](./site/setup/images/README.md) を、使い方ガイドページの実例は [`site/guide/images/README.md`](./site/guide/images/README.md) を参照してください。

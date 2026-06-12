@@ -30,7 +30,7 @@ export default defineConfig({
   lang: "ja",
   title: "Kuruma-Logger",
   titleTemplate: ":title | Kuruma-Logger",
-  description: "Kuruma-Logger の情報をまとめたポータルサイトです。",
+  description: "Kuruma-Logger のセットアップ、使い方、トラブル対応、更新情報をまとめたサポートサイトです。",
   srcDir: ".",
   cleanUrls: false,
   base,
@@ -42,20 +42,20 @@ export default defineConfig({
     nav: [
       { text: "ホーム", link: "/" },
       { text: "セットアップ", link: "/setup/" },
-      { text: "ファームウェア", link: "/updates/" },
-      { text: "よくある質問", link: "/troubleshooting/" },
-      { text: "問い合わせ", link: "/contact/" },
-      { text: "特商法表記", link: "/legal/" }
+      { text: "使い方", link: "/guide/" },
+      { text: "トラブル対応", link: "/troubleshooting/" },
+      { text: "更新情報", link: "/updates/" },
+      { text: "問い合わせ", link: "/contact/" }
     ],
     sidebar: [
       {
         text: "サポート",
         items: [
           { text: "セットアップ", link: "/setup/" },
+          { text: "使い方ガイド", link: "/guide/" },
           { text: "トラブル対応", link: "/troubleshooting/" },
           { text: "更新情報", link: "/updates/" },
-          { text: "問い合わせ", link: "/contact/" },
-          { text: "特商法表記", link: "/legal/" }
+          { text: "問い合わせ", link: "/contact/" }
         ]
       }
     ],
@@ -67,7 +67,7 @@ export default defineConfig({
       provider: "local"
     },
     footer: {
-      message: "Kuruma-Logger Support Site",
+      message: `<a href="${base}legal/">特定商取引法に基づく表記</a>`,
       copyright: `Copyright ${new Date().getFullYear()} Kuruma-Logger`
     }
   }

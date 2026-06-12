@@ -40,35 +40,21 @@
 
 ### 静止画 (reference-style)
 
-| label                              | file                                | 何の写真か                                            |
-|------------------------------------|-------------------------------------|-----------------------------------------------------|
-| `img-cover`                        | `m5-cover-removal.jpeg`             | M5Stack CoreS3 SE の裏蓋を外した状態                   |
-| `img-dip`                          | `gnss-dip-switch.png`               | GNSS モジュールの DIP スイッチ設定                     |
-| `img-grove-pin`                    | `grove-pin-removal.jpeg`            | Grove コネクタから外すピンの位置と爪                   |
-| `img-grove-txd`                    | `grove-txd-confirmed.jpeg`          | TXD に配線がないことの確認                             |
-| `img-harness-connection`           | `harness-canunit-connection.jpeg`   | 中間ハーネスとミニ CAN ユニットの接続                   |
-| `img-canunit-connected`            | `canunit-connected.jpeg`            | ミニ CAN ユニットへの接続状態                          |
-| `img-analog-meter`                 | `analog-meter.jpg`                  | アナログメータ画面                                    |
-| `img-digital-meter`                | `digital-meter.jpg`                 | 4 分割デジタルメータ画面                              |
-| `img-shiftup-indicator`            | `shiftup-indicator.jpg`             | シフトアップインジケータ画面                          |
-| `img-timeseries-monitor`           | `timeseries-monitor.jpg`            | 時系列モニタ画面                                      |
-| `img-system-monitor`               | `system-monitor.jpg`                | システムモニタ画面                                    |
-| `img-setting`                      | `setting.jpg`                       | 設定画面                                              |
-| `img-dashboard`                    | `dashboard.jpg`                     | WEB-UI Dashboard 画面                                |
-| `img-realtimemonitor`              | `realtime-monitor.jpg`              | WEB-UI RealTimeMonitor 画面                          |
-| `img-webui-wifi-setting`           | `webui-wifi-setting.jpg`            | WEB-UI Wi-Fi 設定画面                                |
-| `img-webui-vehicle-setting`        | `webui-vehicle-setting.jpg`         | WEB-UI 車両設定切り替え画面                          |
-| `img-webui-can-transceiver-setting`| `webui-can-transceiver-setting.jpg` | WEB-UI CAN トランシーバ切り替え画面                  |
+| label                    | file                              | 何の写真か                             |
+|--------------------------|-----------------------------------|--------------------------------------|
+| `img-cover`              | `m5-cover-removal.jpeg`           | M5Stack CoreS3 SE の裏蓋を外した状態  |
+| `img-dip`                | `gnss-dip-switch.png`             | GNSS モジュールの DIP スイッチ設定    |
+| `img-grove-pin`          | `grove-pin-removal.jpeg`          | Grove コネクタから外すピンの位置と爪  |
+| `img-grove-txd`          | `grove-txd-confirmed.jpeg`        | TXD に配線がないことの確認            |
+| `img-harness-connection` | `harness-canunit-connection.jpeg` | 中間ハーネスとミニ CAN ユニットの接続 |
+| `img-canunit-connected`  | `canunit-connected.jpeg`          | ミニ CAN ユニットへの接続状態         |
 
 ### 動画 (HTML 直書き)
 
-| file                       | 何の動画か                            |
-|----------------------------|-------------------------------------|
-| `wifi-setting.mp4`         | M5Stack 側で Wi-Fi の設定を確認      |
-| `phone-setting.mp4`        | スマホ側で Wi-Fi に接続              |
-| `sd-logging.mp4`           | microSD カードへのログ機能           |
-| `racechrono-setting.mp4`   | RaceChrono への転送設定              |
-| `rconly-setting.mp4`       | RC Only モード設定                   |
+| file               | 何の動画か                       |
+|--------------------|--------------------------------|
+| `wifi-setting.mp4` | M5Stack 側で Wi-Fi の設定を確認 |
+| `phone-setting.mp4`| スマホ側で Wi-Fi に接続         |
 
 ## 新しい画像を追加するときの手順
 
