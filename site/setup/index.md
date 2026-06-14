@@ -77,11 +77,11 @@ Lipo バッテリーの車載は発火事故の危険性があるため非推奨
   - [公式インストーラサイト][7]にアクセスします。
   - セットアップページより、Google アカウントでログインします。
   - サイトの誘導に従ってインストールします。
-    - 2026/5/8 現在は M5Stack CoreS3 SE 用のアプリのみ配布中です。
+    - 2026/6/14 現在は M5Stack CoreS3 SE / M5Stack Tab5 用のアプリを配布中です。
     - ND Roadster / FL5 Civic Type R からお選びください（後からでも変更できます）。
     - M5Stack を繋げるご自宅または スマホの Wi-Fi を登録してください。初回インストール以降は無線でアップデートできるようになります。
 
-[7]: https://app.kuruma-logger.com/
+[7]: https://app.kuruma-logger.com/setup/
 
 
 ## 中間ハーネスの取り付け
