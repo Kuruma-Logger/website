@@ -8,7 +8,7 @@ description: Kuruma-Logger の画面の見方、設定、RaceChrono 連携、mic
 Kuruma-Logger の画面の見方と各機能の使い方をまとめています。
 
 ::: info
-本ページは M5Stack CoreS3 SE / ファームウェア v1.0.13 時点の情報です。
+本ページは M5Stack CoreS3 SE / M5Stack Tab5 / ファームウェア v1.0.17 時点の情報です。
 :::
 
 ## 機能紹介動画
@@ -187,7 +187,7 @@ CAN/GPS のデータを統合して、20Hz で RaceChrono に転送します。
     - SSID: Kuruma-Logger
     - パスワード: ※ M5Stack の Wi-Fi 設定画面で確認し入力してください。
     - IP アドレス: 192.168.4.1
-    - ポート: 57752
+    - ポート: 9000
   - ※ 実際のポート番号は本体の Wi-Fi 設定画面、または WEB-UI の Wi-Fi 設定ページで確認できます。
 
 <video controls width="100%" src="./images/racechrono-setting.mp4" title="RaceChrono への転送設定"></video>
