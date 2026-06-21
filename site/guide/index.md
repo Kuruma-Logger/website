@@ -8,7 +8,7 @@ description: Kuruma-Logger の画面の見方、設定、RaceChrono 連携、mic
 Kuruma-Logger の画面の見方と各機能の使い方をまとめています。
 
 ::: info
-本ページは M5Stack CoreS3 SE / M5Stack Tab5 / ファームウェア v1.0.17 時点の情報です。
+本ページは M5Stack CoreS3 SE v1.0.15 / M5Stack Tab5 v1.0.18 時点の情報です。
 :::
 
 ## 機能紹介動画
