@@ -44,6 +44,7 @@ export default defineConfig({
       { text: "セットアップ", link: "/setup/" },
       { text: "使い方", link: "/guide/" },
       { text: "トラブル対応", link: "/troubleshooting/" },
+      { text: "既知の不具合", link: "/known-issues/" },
       { text: "更新情報", link: "/updates/" },
       { text: "問い合わせ", link: "/contact/" }
     ],
@@ -54,6 +55,7 @@ export default defineConfig({
           { text: "セットアップ", link: "/setup/" },
           { text: "使い方ガイド", link: "/guide/" },
           { text: "トラブル対応", link: "/troubleshooting/" },
+          { text: "既知の不具合", link: "/known-issues/" },
           { text: "更新情報", link: "/updates/" },
           { text: "問い合わせ", link: "/contact/" }
         ]
