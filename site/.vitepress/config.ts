@@ -37,6 +37,9 @@ export default defineConfig({
   site: siteUrl.replace(/\/$/, ""),
   appearance: false,
   lastUpdated: true,
+  sitemap: {
+    hostname: "https://kuruma-logger.com/"
+  },
   head: [["meta", { property: "og:type", content: "website" }]],
   themeConfig: {
     nav: [
