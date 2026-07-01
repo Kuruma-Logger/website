@@ -32,6 +32,7 @@ export default defineConfig({
   titleTemplate: ":title | Kuruma-Logger",
   description: "Kuruma-Logger のセットアップ、使い方、トラブル対応、更新情報をまとめたサポートサイトです。",
   srcDir: ".",
+  srcExclude: ["**/images/README.md"],
   cleanUrls: false,
   base,
   site: siteUrl.replace(/\/$/, ""),
