@@ -6,6 +6,8 @@
 > **重要**: 本手順書を含む準備PR(`feature/phase1-custom-domain`)は、**切替当日・DNS切替後にマージ**すること。
 > 先にマージすると CNAME ファイルにより Pages のカスタムドメイン設定が有効化されるが、DNS がまだ CloudFront を向いているため証明書発行に失敗し、サイトが壊れる。
 
+> **注意(表示崩れウィンドウ)**: 手順1でカスタムドメインを設定してから手順3の再デプロイが完了するまでの間、`kuruma-logger.com` では旧 base(`/website/`)でビルドされた配信物が返るため、CSS・画像が崩れた状態になる(数分〜十数分)。旧 URL(github.io)側は影響を受けない。ウィンドウを最小化するため、手順1〜3は続けて実施すること。
+
 ## 前提条件
 
 - [ ] license_server 側 Terraform PR(apex/www を CloudFront エイリアスから外し、Route53 の A/AAAA(apex)を GitHub Pages の IP へ、`www` を `kuruma-logger.github.io` への CNAME へ向ける)が **apply 済み** であること
