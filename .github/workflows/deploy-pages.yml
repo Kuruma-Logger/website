@@ -1,9 +1,9 @@
 name: Deploy to S3 + CloudFront
 
-# 初回ロールアウト中は push トリガーを一時的に外している(site-integration
-# 移行の安全確認のため)。workflow_dispatch の dry_run=true → false で
-# 初回デプロイを手動検証してから、push トリガーを復活させる別PRを出すこと。
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       dry_run:
