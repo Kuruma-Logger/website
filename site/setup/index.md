@@ -82,7 +82,7 @@ Lipo バッテリーの車載は発火事故の危険性があるため非推奨
     - M5Stack を繋げるご自宅または スマホの Wi-Fi を登録してください。初回インストール以降は無線でアップデートできるようになります。
 
 <div class="cta-row">
-  <a class="cta-button primary" href="https://kuruma-logger.com/flash/">書き込みツールを開く →</a>
+  <a class="cta-button primary" href="https://kuruma-logger.com/flash/" target="_self">書き込みツールを開く →</a>
 </div>
 
 書き込みが完了したらこのページに戻り、続きの手順（中間ハーネスの取り付け）へ進んでください。

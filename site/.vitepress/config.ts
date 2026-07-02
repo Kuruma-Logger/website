@@ -48,7 +48,7 @@ export default defineConfig({
       { text: "使い方", link: "/guide/" },
       { text: "トラブル対応", link: "/troubleshooting/" },
       { text: "更新情報", link: "/updates/" },
-      { text: "マイページ", link: "/portal/" },
+      { text: "マイページ", link: "/portal/", target: "_self" },
       { text: "問い合わせ", link: "/contact/" }
     ],
     sidebar: [
