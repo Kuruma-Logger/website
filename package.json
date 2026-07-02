@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vitepress dev site --host",
     "build": "vitepress build site",
-    "preview": "vitepress preview site"
+    "preview": "vitepress preview site",
+    "check:asset-collision": "bash scripts/check-site-asset-collision.sh"
   },
   "devDependencies": {
     "vitepress": "^1.6.4"

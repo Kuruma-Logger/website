@@ -1,11 +1,11 @@
 # Kuruma-Logger Support Website
 
-Kuruma-Logger のサポートサイトです。GitHub Pages へ静的配信します。
+Kuruma-Logger のサポートサイトです。VitePress の成果物を AWS S3/CloudFront へ配信します。
 
 ## 技術スタック
 
 - VitePress
-- GitHub Actions + GitHub Pages
+- GitHub Actions + AWS (OIDC) + S3 + CloudFront
 - Formspree（ログイン不要の問い合わせフォーム）
 
 ## ローカル開発
@@ -25,18 +25,32 @@ npm run dev
 - `VITE_SITE_URL`
   - 任意。OGP などで使うサイト URL。
 - `VITEPRESS_BASE`
-  - 任意。プロジェクトページ配信時のベースパス（例: `/website/`）。
-  - GitHub Actions 上では未設定でもリポジトリ名から自動推定します。
+  - デフォルト `/` を明示的に使用します。
 
 ## GitHub 側設定
 
 Repository Variables に以下を設定してください。
 
+- `WEBSITE_AWS_DEPLOY_ROLE_ARN`
+  - `license_server/license_server/infra/terraform/site_distribution` の output `website_github_actions_deploy_role_arn` を設定します。
+- `WEBSITE_S3_BUCKET`
+  - 省略時は `kuruma-logger-nonprod-f636821a-site`。
+- `CLOUDFRONT_DISTRIBUTION_ID`
+  - 省略時は `E2338SP289P6EF`。
+- `AWS_REGION`
+  - 省略時は `ap-northeast-1`。
 - `VITE_FORMSPREE_ENDPOINT`
 
 互換性のため、旧 Astro 構成の `PUBLIC_FORMSPREE_ENDPOINT` / `PUBLIC_SITE_URL` / `PUBLIC_BASE_PATH` も workflow 側でフォールバックします。
 
-設定後、`main` へマージすると `.github/workflows/deploy-pages.yml` が実行され、GitHub Pages に公開されます。
+設定後、`main` へマージすると `.github/workflows/deploy-pages.yml` が実行され、`kuruma-logger-nonprod-f636821a-site` のルートへ S3 配信されます。初回は Actions の `workflow_dispatch` で `dry_run=true` を指定し、S3 sync の対象を確認してください。
+
+ローカル検証では、以下を順に実行できます。
+
+```bash
+npm run build
+npm run check:asset-collision
+```
 
 ## ページ構成
 
