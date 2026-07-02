@@ -45,7 +45,7 @@ export default defineConfig({
   themeConfig: {
     logo: "/logo.svg",
     nav: [
-      { text: "セットアップ", link: "/setup/" },
+      { text: "セットアップガイド", link: "/setup/" },
       { text: "使い方", link: "/guide/" },
       { text: "トラブル対応", link: "/troubleshooting/" },
       { text: "更新情報", link: "/updates/" },
@@ -56,7 +56,7 @@ export default defineConfig({
       {
         text: "サポート",
         items: [
-          { text: "セットアップ", link: "/setup/" },
+          { text: "セットアップガイド", link: "/setup/" },
           { text: "使い方ガイド", link: "/guide/" },
           { text: "トラブル対応", link: "/troubleshooting/" },
           { text: "既知の不具合", link: "/known-issues/" },
