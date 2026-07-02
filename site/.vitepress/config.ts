@@ -12,19 +12,17 @@ function normalizeBase(value?: string): string | undefined {
 }
 
 const isGithubActions = process.env.GITHUB_ACTIONS === "true";
-const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1];
 const owner = process.env.GITHUB_REPOSITORY_OWNER;
 
 const base =
-  normalizeBase(process.env.VITEPRESS_BASE || process.env.PUBLIC_BASE_PATH) ||
-  (isGithubActions && repoName ? `/${repoName}/` : "/");
+  normalizeBase(process.env.VITEPRESS_BASE || process.env.PUBLIC_BASE_PATH) || "/";
+
+const assetsDir = process.env.VITEPRESS_ASSETS_DIR || "_assets";
 
 const siteUrl =
   process.env.VITE_SITE_URL?.trim() ||
   process.env.PUBLIC_SITE_URL?.trim() ||
-  (isGithubActions && owner
-    ? `https://${owner}.github.io${base === "/" ? "" : base.slice(0, -1)}`
-    : "http://localhost:5173");
+  (isGithubActions && owner ? "https://kuruma-logger.com" : "http://localhost:5173");
 
 export default defineConfig({
   lang: "ja",
@@ -34,6 +32,7 @@ export default defineConfig({
   srcDir: ".",
   srcExclude: ["**/images/README.md"],
   cleanUrls: false,
+  assetsDir,
   base,
   site: siteUrl.replace(/\/$/, ""),
   appearance: false,
@@ -49,7 +48,7 @@ export default defineConfig({
       { text: "使い方", link: "/guide/" },
       { text: "トラブル対応", link: "/troubleshooting/" },
       { text: "更新情報", link: "/updates/" },
-      { text: "マイページ", link: "https://app.kuruma-logger.com/portal/" },
+      { text: "マイページ", link: "/portal/" },
       { text: "問い合わせ", link: "/contact/" }
     ],
     sidebar: [

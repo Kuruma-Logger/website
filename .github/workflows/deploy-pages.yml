@@ -1,27 +1,48 @@
-name: Deploy GitHub Pages
+name: Deploy to S3 + CloudFront
 
+# 初回ロールアウト中は push トリガーを一時的に外している(site-integration
+# 移行の安全確認のため)。workflow_dispatch の dry_run=true → false で
+# 初回デプロイを手動検証してから、push トリガーを復活させる別PRを出すこと。
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry-run only (no writes to S3/CloudFront). Use for the first validation run."
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: read
-  pages: write
   id-token: write
 
 concurrency:
-  group: pages
+  group: website-deploy
   cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     env:
+      AWS_REGION: ${{ vars.AWS_REGION || 'ap-northeast-1' }}
+      WEBSITE_S3_BUCKET: ${{ vars.WEBSITE_S3_BUCKET || 'kuruma-logger-nonprod-f636821a-site' }}
+      CLOUDFRONT_DISTRIBUTION_ID: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID || 'E2338SP289P6EF' }}
+      ASSUME_ROLE_ARN: ${{ vars.WEBSITE_AWS_DEPLOY_ROLE_ARN }}
       VITE_FORMSPREE_ENDPOINT: ${{ vars.VITE_FORMSPREE_ENDPOINT || vars.PUBLIC_FORMSPREE_ENDPOINT }}
       VITE_SITE_URL: ${{ vars.VITE_SITE_URL || vars.PUBLIC_SITE_URL }}
-      VITEPRESS_BASE: ${{ vars.VITEPRESS_BASE || vars.PUBLIC_BASE_PATH }}
+      VITEPRESS_BASE: "/"
+      S3_SYNC_EXCLUDES: |
+        firmware/*
+        installer/*
+        flash/*
+        portal/*
+        admin/*
+        auth/*
+        api/*
+        downloads/*
+        assets/*
+        CNAME
+      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || 'false' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v6.0.2
@@ -38,18 +59,63 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v5.0.0
-        with:
-          path: ./site/.vitepress/dist
+      - name: Check asset collisions (structural, no AWS needed)
+        run: bash scripts/check-site-asset-collision.sh
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5.0.0
+      - name: Validate deployment configuration
+        run: |
+          set -euo pipefail
+          if [[ -z "${ASSUME_ROLE_ARN}" ]]; then
+            echo "::error::Repository variable WEBSITE_AWS_DEPLOY_ROLE_ARN is required."
+            exit 1
+          fi
+          if [[ -z "${WEBSITE_S3_BUCKET}" ]]; then
+            echo "::error::WEBSITE_S3_BUCKET is required."
+            exit 1
+          fi
+          if [[ -z "${CLOUDFRONT_DISTRIBUTION_ID}" ]]; then
+            echo "::error::CLOUDFRONT_DISTRIBUTION_ID is required."
+            exit 1
+          fi
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ env.ASSUME_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      # license_server は private リポジトリなので sibling checkout は使わず、
+      # 認証情報が揃ったこの時点で実際の S3 バケットの現物と照合する
+      # (真実の源はリポジトリの想定ではなくバケットの中身)。
+      - name: Check asset collisions against live S3 bucket
+        run: bash scripts/check-site-asset-collision.sh --bucket "$WEBSITE_S3_BUCKET"
+
+      - name: Sync to S3 bucket root
+        run: |
+          set -euo pipefail
+
+          sync_args=(--exact-timestamps --delete)
+
+          if [[ "$DRY_RUN" == "true" ]]; then
+            sync_args+=(--dryrun)
+          fi
+
+          while IFS= read -r pattern; do
+            [[ -z "$pattern" ]] && continue
+            sync_args+=(--exclude "$pattern")
+          done <<< "$S3_SYNC_EXCLUDES"
+
+          printf 'S3 sync excludes:\n%s\n' "$S3_SYNC_EXCLUDES"
+
+          aws s3 sync site/.vitepress/dist/ "s3://$WEBSITE_S3_BUCKET/" "${sync_args[@]}"
+
+          if [[ "$DRY_RUN" == "true" ]]; then
+            echo "Dry-run completed. No objects were written."
+          fi
+
+      - name: Invalidate CloudFront cache
+        if: env.DRY_RUN != 'true'
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" \
+            --paths '/*'
